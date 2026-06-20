@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Competitive Programming Course/Competitive Programming Course.vcxproj" />
+  <Project Path="Competitive Programming Course/Competitive Programming Course.vcxproj" Id="c95910e1-873a-46a8-906e-2a68a1d4e6ca" />
 </Solution>
