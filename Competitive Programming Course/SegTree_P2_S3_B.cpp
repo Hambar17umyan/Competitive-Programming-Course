@@ -15,10 +15,10 @@ void push(int pos, int tl, int tr) {
     if (!tree[pos].lazy || tl == tr) 
         return;
 
-    int mid = (tl + tr) / 2;
+    int middle = (tl + tr) / 2;
 
-    tree[pos * 2].sum = (mid - tl + 1) - tree[pos * 2].sum;
-    tree[pos * 2 + 1].sum = (tr - mid) - tree[pos * 2 + 1].sum;
+    tree[pos * 2].sum = (middle - tl + 1) - tree[pos * 2].sum;
+    tree[pos * 2 + 1].sum = (tr - middle) - tree[pos * 2 + 1].sum;
 
     tree[pos * 2].lazy ^= 1;
     tree[pos * 2 + 1].lazy ^= 1;
@@ -27,20 +27,23 @@ void push(int pos, int tl, int tr) {
 }
 
 void update(int l, int r, int tl, int tr, int pos) {
-    if (l <= tl && tr <= r) {
+    if (l == tl && tr == r) {
         tree[pos].sum = (tr - tl + 1) - tree[pos].sum;
         tree[pos].lazy ^= 1;
         return;
     }
 
     push(pos, tl, tr);
-    int mid = (tl + tr) / 2;
+    int middle = (tl + tr) / 2;
 
-    if (l <= mid) 
-        update(l, r, tl, mid, pos * 2);
-
-    if (r > mid) 
-        update(l, r, mid + 1, tr, pos * 2 + 1);
+    if (r < middle + 1) 
+        update(l, r, tl, middle, pos * 2);
+    else if (l > middle) 
+        update(l, r, middle + 1, tr, pos * 2 + 1);
+    else {
+        update(l, middle, tl, middle, pos * 2);
+        update(middle + 1, r, middle + 1, tr, pos * 2 + 1);
+    }
 
     tree[pos].sum = tree[pos * 2].sum + tree[pos * 2 + 1].sum;
 }
