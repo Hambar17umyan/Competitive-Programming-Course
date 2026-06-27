@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SegTree_P2_S3_B.cpp">
+    <ClCompile Include="SegTree_P2_S3_A.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
