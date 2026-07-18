@@ -19,8 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SegTree_P2_S2_F.cpp" />
-    <ClCompile Include="SegTree_P2_S3_C.cpp" />
+    <ClCompile Include="DSU_S1_A_2.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
